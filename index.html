@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwipeClean — Privacy Policy</title>
+  <style>
+    :root {
+      --bg:        #0a0a10;
+      --surface:   #12121a;
+      --card:      #1c1c28;
+      --border:    #2a2a3a;
+      --text:      #f0f0f8;
+      --muted:     #8888aa;
+      --accent:    #10b981;
+      --red:       #e0245e;
+      --gold:      #f59e0b;
+      --radius:    12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Lang toggle ── */
+    .lang-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+    }
+    .lang-btn {
+      background: var(--card);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 18px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* ── Layout ── */
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .logo { font-size: 56px; line-height: 1; }
+    .app-name {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-top: 12px;
+    }
+    .tagline { color: var(--muted); font-size: 15px; margin-top: 6px; }
+    .updated {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: linear-gradient(135deg, #0d2218 0%, #0a1a28 100%);
+      border: 1px solid #1a3a28;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .highlight .icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+    .highlight p { font-size: 15px; color: var(--text); }
+    .highlight strong { color: var(--accent); }
+
+    /* ── Sections ── */
+    section { margin-bottom: 36px; }
+    h2 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+    }
+    .card p { font-size: 15px; color: var(--text); margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+    }
+    .card ul li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px 10px;
+      font-size: 13px;
+      color: var(--muted);
+      margin: 3px 3px 3px 0;
+    }
+
+    /* ── Table ── */
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    th { color: var(--muted); font-weight: 600; font-size: 12px; letter-spacing: 0.5px; }
+    td { color: var(--text); }
+    tr:last-child td { border-bottom: none; }
+    .yes { color: var(--accent); font-weight: 700; }
+    .no  { color: var(--red);    font-weight: 700; }
+
+    /* ── Contact ── */
+    .contact-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-link:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Language sections ── */
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
+  </style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')">🇬🇧 English</button>
+  <button class="lang-btn" onclick="setLang('es')">🇪🇸 Español</button>
+  <button class="lang-btn" onclick="setLang('pt')">🇧🇷 Português</button>
+  <button class="lang-btn" onclick="setLang('fr')">🇫🇷 Français</button>
+  <button class="lang-btn" onclick="setLang('de')">🇩🇪 Deutsch</button>
+</div>
+
+<div class="wrap">
+
+  <div class="header">
+    <div class="logo">🧹</div>
+    <div class="app-name">SwipeClean</div>
+    <div class="tagline">Gallery Cleaner</div>
+    <span class="updated">Last updated: June 2026</span>
+  </div>
+
+  <!-- ════════════════════════════ ENGLISH ════════════════════════════ -->
+  <div data-lang="en" class="visible">
+
+    <div class="highlight">
+      <div class="icon">🛡️</div>
+      <p><strong>Your privacy is fully protected.</strong> SwipeClean works entirely on your device. We never collect, transmit, or store any of your photos, videos, or personal data on external servers.</p>
+    </div>
+
+    <section>
+      <h2>What data does the app access?</h2>
+      <div class="card">
+        <ul>
+          <li>Photos and videos stored on your device — to display them for review</li>
+          <li>Storage space information — to show free/used space in statistics</li>
+          <li>App usage statistics (session counts, deletions, streaks) — stored <strong>locally only</strong> on your device</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data transmission</h2>
+      <div class="card">
+        <table>
+          <tr><th>Data type</th><th>Transmitted?</th><th>Where</th></tr>
+          <tr><td>Your photos &amp; videos</td><td class="no">Never</td><td>—</td></tr>
+          <tr><td>Usage statistics</td><td class="no">Never</td><td>Device only</td></tr>
+          <tr><td>Device identifiers</td><td class="no">Never</td><td>—</td></tr>
+          <tr><td>Location data</td><td class="no">Never</td><td>—</td></tr>
+          <tr><td>Personal information</td><td class="no">Never</td><td>—</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Third-party services</h2>
+      <div class="card">
+        <p>SwipeClean does <strong>not</strong> use any analytics, advertising, or tracking SDKs. No third party has access to your data.</p>
+        <p style="margin-top:10px;">The app uses only standard Android system APIs (MediaStore) to access your gallery.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Permissions used</h2>
+      <div class="card">
+        <ul>
+          <li><span class="badge">📸 READ_MEDIA_IMAGES</span> — Read photos from gallery (Android 13+)</li>
+          <li><span class="badge">🎬 READ_MEDIA_VIDEO</span> — Read videos from gallery (Android 13+)</li>
+          <li><span class="badge">📂 READ_EXTERNAL_STORAGE</span> — Read media (Android 12 and below)</li>
+          <li><span class="badge">🗑️ WRITE_EXTERNAL_STORAGE</span> — Delete files (Android 9 only)</li>
+        </ul>
+        <p style="margin-top:14px;color:var(--muted);font-size:13px;">All permissions are used exclusively to display your gallery and perform deletions you explicitly confirm. No files are accessed for any other purpose.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Deletion</h2>
+      <div class="card">
+        <p>Deletions are <strong>performed by you</strong> after explicit confirmation. SwipeClean uses the Android system's standard deletion mechanism (MediaStore.createDeleteRequest on Android 11+), which shows a native system confirmation dialog before any file is permanently deleted.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data retention</h2>
+      <div class="card">
+        <p>All app data (statistics, achievements, streaks) is stored locally on your device using Android SharedPreferences. It is never sent anywhere. You can clear it at any time by uninstalling the app or clearing app data in Android Settings.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Children's privacy</h2>
+      <div class="card">
+        <p>SwipeClean is not directed at children under 13. We do not knowingly collect any information from children.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Changes to this policy</h2>
+      <div class="card">
+        <p>If we add features that involve data collection (such as analytics or cloud backup), this policy will be updated and the "Last updated" date will be changed. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Questions about this privacy policy? Contact us at:</p>
+        <p style="margin-top:8px;"><a href="mailto:diego91gp@gmail.com" class="contact-link">diego91gp@gmail.com</a></p>
+      </div>
+    </section>
+
+  </div><!-- /en -->
+
+  <!-- ════════════════════════════ ESPAÑOL ════════════════════════════ -->
+  <div data-lang="es">
+
+    <div class="highlight">
+      <div class="icon">🛡️</div>
+      <p><strong>Tu privacidad está completamente protegida.</strong> SwipeClean funciona íntegramente en tu dispositivo. Nunca recopilamos, transmitimos ni almacenamos tus fotos, vídeos ni ningún dato personal en servidores externos.</p>
+    </div>
+
+    <section>
+      <h2>¿A qué datos accede la app?</h2>
+      <div class="card">
+        <ul>
+          <li>Fotos y vídeos almacenados en tu dispositivo — para mostrarlos durante la revisión</li>
+          <li>Información del espacio de almacenamiento — para mostrar estadísticas de espacio libre/usado</li>
+          <li>Estadísticas de uso (sesiones, borrados, racha) — guardadas <strong>solo localmente</strong> en tu dispositivo</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Transmisión de datos</h2>
+      <div class="card">
+        <table>
+          <tr><th>Tipo de dato</th><th>¿Se transmite?</th><th>Destino</th></tr>
+          <tr><td>Tus fotos y vídeos</td><td class="no">Nunca</td><td>—</td></tr>
+          <tr><td>Estadísticas de uso</td><td class="no">Nunca</td><td>Solo en el dispositivo</td></tr>
+          <tr><td>Identificadores del dispositivo</td><td class="no">Nunca</td><td>—</td></tr>
+          <tr><td>Datos de ubicación</td><td class="no">Nunca</td><td>—</td></tr>
+          <tr><td>Información personal</td><td class="no">Nunca</td><td>—</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Servicios de terceros</h2>
+      <div class="card">
+        <p>SwipeClean <strong>no utiliza</strong> ningún SDK de analítica, publicidad ni rastreo. Ningún tercero tiene acceso a tus datos.</p>
+        <p style="margin-top:10px;">La app utiliza únicamente las APIs estándar del sistema Android (MediaStore) para acceder a tu galería.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Permisos utilizados</h2>
+      <div class="card">
+        <ul>
+          <li><span class="badge">📸 READ_MEDIA_IMAGES</span> — Leer fotos de la galería (Android 13+)</li>
+          <li><span class="badge">🎬 READ_MEDIA_VIDEO</span> — Leer vídeos de la galería (Android 13+)</li>
+          <li><span class="badge">📂 READ_EXTERNAL_STORAGE</span> — Leer archivos multimedia (Android 12 y anteriores)</li>
+          <li><span class="badge">🗑️ WRITE_EXTERNAL_STORAGE</span> — Borrar archivos (solo Android 9)</li>
+        </ul>
+        <p style="margin-top:14px;color:var(--muted);font-size:13px;">Todos los permisos se usan exclusivamente para mostrar tu galería y realizar los borrados que tú confirmas. No se accede a ningún archivo con ningún otro propósito.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Borrado de archivos</h2>
+      <div class="card">
+        <p>Los borrados los realizas <strong>tú</strong> tras confirmación explícita. SwipeClean utiliza el mecanismo estándar de Android (MediaStore.createDeleteRequest en Android 11+), que muestra un diálogo de confirmación nativo del sistema antes de eliminar cualquier archivo de forma permanente.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Retención de datos</h2>
+      <div class="card">
+        <p>Todos los datos de la app (estadísticas, logros, racha) se almacenan localmente en tu dispositivo mediante SharedPreferences de Android. Nunca se envían a ningún lugar. Puedes eliminarlos en cualquier momento desinstalando la app o borrando los datos de la app en los Ajustes de Android.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Privacidad de menores</h2>
+      <div class="card">
+        <p>SwipeClean no está dirigida a menores de 13 años. No recopilamos conscientemente ninguna información de menores.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cambios en esta política</h2>
+      <div class="card">
+        <p>Si añadimos funciones que impliquen recopilación de datos (como analíticas o copia de seguridad en la nube), esta política se actualizará y se cambiará la fecha de "Última actualización". El uso continuado de la app tras los cambios implica la aceptación de la política actualizada.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contacto</h2>
+      <div class="card">
+        <p>¿Preguntas sobre esta política de privacidad? Contacta con nosotros en:</p>
+        <p style="margin-top:8px;"><a href="mailto:diego91gp@gmail.com" class="contact-link">diego91gp@gmail.com</a></p>
+      </div>
+    </section>
+
+  </div><!-- /es -->
+
+  <!-- ════════════════════════════ PORTUGUÊS ════════════════════════════ -->
+  <div data-lang="pt">
+
+    <div class="highlight">
+      <div class="icon">🛡️</div>
+      <p><strong>Sua privacidade está completamente protegida.</strong> O SwipeClean funciona inteiramente no seu dispositivo. Nunca coletamos, transmitimos ou armazenamos suas fotos, vídeos ou dados pessoais em servidores externos.</p>
+    </div>
+
+    <section>
+      <h2>Quais dados o app acessa?</h2>
+      <div class="card">
+        <ul>
+          <li>Fotos e vídeos armazenados no seu dispositivo — para exibi-los durante a revisão</li>
+          <li>Informações de armazenamento — para mostrar estatísticas de espaço livre/usado</li>
+          <li>Estatísticas de uso (sessões, exclusões, sequências) — armazenadas <strong>somente localmente</strong> no seu dispositivo</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Transmissão de dados</h2>
+      <div class="card">
+        <table>
+          <tr><th>Tipo de dado</th><th>Transmitido?</th><th>Destino</th></tr>
+          <tr><td>Suas fotos e vídeos</td><td class="no">Nunca</td><td>—</td></tr>
+          <tr><td>Estatísticas de uso</td><td class="no">Nunca</td><td>Somente no dispositivo</td></tr>
+          <tr><td>Identificadores do dispositivo</td><td class="no">Nunca</td><td>—</td></tr>
+          <tr><td>Dados de localização</td><td class="no">Nunca</td><td>—</td></tr>
+          <tr><td>Informações pessoais</td><td class="no">Nunca</td><td>—</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Serviços de terceiros</h2>
+      <div class="card">
+        <p>O SwipeClean <strong>não utiliza</strong> nenhum SDK de análise, publicidade ou rastreamento. Nenhum terceiro tem acesso aos seus dados.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contato</h2>
+      <div class="card">
+        <p>Dúvidas sobre esta política de privacidade? Entre em contato:</p>
+        <p style="margin-top:8px;"><a href="mailto:diego91gp@gmail.com" class="contact-link">diego91gp@gmail.com</a></p>
+      </div>
+    </section>
+
+  </div><!-- /pt -->
+
+  <!-- ════════════════════════════ FRANÇAIS ════════════════════════════ -->
+  <div data-lang="fr">
+
+    <div class="highlight">
+      <div class="icon">🛡️</div>
+      <p><strong>Votre vie privée est entièrement protégée.</strong> SwipeClean fonctionne entièrement sur votre appareil. Nous ne collectons, ne transmettons ni ne stockons jamais vos photos, vidéos ou données personnelles sur des serveurs externes.</p>
+    </div>
+
+    <section>
+      <h2>Quelles données l'app accède-t-elle ?</h2>
+      <div class="card">
+        <ul>
+          <li>Photos et vidéos stockées sur votre appareil — pour les afficher lors de la révision</li>
+          <li>Informations de stockage — pour afficher les statistiques d'espace libre/utilisé</li>
+          <li>Statistiques d'utilisation (sessions, suppressions, séries) — stockées <strong>localement uniquement</strong> sur votre appareil</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Transmission de données</h2>
+      <div class="card">
+        <table>
+          <tr><th>Type de donnée</th><th>Transmise ?</th><th>Destination</th></tr>
+          <tr><td>Vos photos et vidéos</td><td class="no">Jamais</td><td>—</td></tr>
+          <tr><td>Statistiques d'utilisation</td><td class="no">Jamais</td><td>Appareil uniquement</td></tr>
+          <tr><td>Identifiants de l'appareil</td><td class="no">Jamais</td><td>—</td></tr>
+          <tr><td>Données de localisation</td><td class="no">Jamais</td><td>—</td></tr>
+          <tr><td>Informations personnelles</td><td class="no">Jamais</td><td>—</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Services tiers</h2>
+      <div class="card">
+        <p>SwipeClean <strong>n'utilise</strong> aucun SDK d'analyse, de publicité ou de suivi. Aucun tiers n'a accès à vos données.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Des questions sur cette politique de confidentialité ? Contactez-nous :</p>
+        <p style="margin-top:8px;"><a href="mailto:diego91gp@gmail.com" class="contact-link">diego91gp@gmail.com</a></p>
+      </div>
+    </section>
+
+  </div><!-- /fr -->
+
+  <!-- ════════════════════════════ DEUTSCH ════════════════════════════ -->
+  <div data-lang="de">
+
+    <div class="highlight">
+      <div class="icon">🛡️</div>
+      <p><strong>Deine Privatsphäre ist vollständig geschützt.</strong> SwipeClean funktioniert vollständig auf deinem Gerät. Wir sammeln, übertragen oder speichern niemals deine Fotos, Videos oder persönlichen Daten auf externen Servern.</p>
+    </div>
+
+    <section>
+      <h2>Auf welche Daten greift die App zu?</h2>
+      <div class="card">
+        <ul>
+          <li>Auf deinem Gerät gespeicherte Fotos und Videos — zur Anzeige während der Durchsicht</li>
+          <li>Speicherplatzinformationen — zur Anzeige von Statistiken über freien/belegten Speicher</li>
+          <li>Nutzungsstatistiken (Sitzungen, Löschungen, Serien) — werden <strong>nur lokal</strong> auf deinem Gerät gespeichert</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Datenübertragung</h2>
+      <div class="card">
+        <table>
+          <tr><th>Datentyp</th><th>Übertragen?</th><th>Ziel</th></tr>
+          <tr><td>Deine Fotos und Videos</td><td class="no">Niemals</td><td>—</td></tr>
+          <tr><td>Nutzungsstatistiken</td><td class="no">Niemals</td><td>Nur auf dem Gerät</td></tr>
+          <tr><td>Gerätekennungen</td><td class="no">Niemals</td><td>—</td></tr>
+          <tr><td>Standortdaten</td><td class="no">Niemals</td><td>—</td></tr>
+          <tr><td>Persönliche Informationen</td><td class="no">Niemals</td><td>—</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Drittanbieterdienste</h2>
+      <div class="card">
+        <p>SwipeClean verwendet <strong>keine</strong> Analyse-, Werbe- oder Tracking-SDKs. Kein Dritter hat Zugriff auf deine Daten.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Kontakt</h2>
+      <div class="card">
+        <p>Fragen zu dieser Datenschutzerklärung? Kontaktiere uns unter:</p>
+        <p style="margin-top:8px;"><a href="mailto:diego91gp@gmail.com" class="contact-link">diego91gp@gmail.com</a></p>
+      </div>
+    </section>
+
+  </div><!-- /de -->
+
+</div><!-- /wrap -->
+
+<footer>
+  SwipeClean · Privacy Policy · <a href="mailto:diego91gp@gmail.com" class="contact-link">diego91gp@gmail.com</a>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.toggle('visible', el.dataset.lang === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.includes(
+        lang === 'en' ? 'English' :
+        lang === 'es' ? 'Español' :
+        lang === 'pt' ? 'Português' :
+        lang === 'fr' ? 'Français' : 'Deutsch'
+      ));
+    });
+  }
+
+  // Auto-detect browser language
+  const lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+  if (['es','pt','fr','de'].includes(lang)) setLang(lang);
+</script>
+
+</body>
+</html>
